@@ -6,7 +6,13 @@ var app = app || {};
             '*path':'setFilter'
         },
         setFilter:function(param){
-            console.log(param);
+            app.TodoFilter=param ||'';
+            //console.log('router',app.TodoFilter)
+            app.todos.trigger('filter');
+            $('.filters li a')
+                .removeClass('selected')
+                .filter('[href="#/'+(app.TodoFilter || '')+'"]')
+                .addClass('selected')
         }
 
     });

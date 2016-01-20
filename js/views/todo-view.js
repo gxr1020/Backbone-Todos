@@ -20,8 +20,8 @@ var app=app||{};
 			this.listenTo(this.model,'change',this.render); //只要数据模型有改变就触发 render渲染事件
 			this.listenTo(this.model,'destroy',this.gxr);
 			// this.listenTo(this.model,'destroy',this.render)
-			this.listenTo(this.model,'visible',this.toggleCompleted)
-			
+			this.listenTo(this.model,'visible',this.toggleCompleted);
+			this.listenTo(this.model,'visible2',this.toggleVisible);
 			
 		},
 		render:function(){
@@ -35,6 +35,14 @@ var app=app||{};
 		toggleCompleted:function(){			
 			this.model.toggle();
 		},
+		toggleVisible:function(){
+			console.log(this.isHidden())
+			this.$el.toggleClass('hidden',this.isHidden());
+		},
+		isHidden:function(){
+			return this.model.get('completed')?app.TodoFilter==='active':app.TodoFilter=== 'complteted';
+		},
+
 		clear:function(){
 			this.model.destroy();//会发送请求
 		},

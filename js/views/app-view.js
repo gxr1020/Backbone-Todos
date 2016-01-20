@@ -19,6 +19,9 @@ var app = app || {};
             this.listenTo(app.todos, 'change:completed', this.filterOne);
             this.listenTo(app.todos, 'destroy', this.footerIsHide);
 
+            this.listenTo(app.todos,'filter',this.filterAll)
+
+
         },
         render: function () {
             this.addAll();
@@ -31,6 +34,7 @@ var app = app || {};
             if (completed == sumLen && sumLen != 0) {
                 this.checkedAll.checked = true;
             }
+
         },
 
         renderFooter: function () {
@@ -88,7 +92,6 @@ var app = app || {};
             // console.log(e.traget.checked);
         },
         toggleOne: function (todo) {
-
             todo.trigger('visible');
         },
         filterOne: function () {
@@ -101,6 +104,12 @@ var app = app || {};
                 this.checkedAll.checked = false;
             }
             this.renderFooter();
+        },
+        filterAll:function(){
+            app.todos.each(this.filterONE2,this)
+        },
+        filterONE2:function(todo){
+            todo.trigger('visible2')
         },
         clearCompleted:function(){
             //app.todos.completed()//选中的列表
