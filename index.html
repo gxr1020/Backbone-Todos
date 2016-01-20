@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div id="warp">
+    <p class="Maxtit">Todos</p>
+    <div id="mainWarp">
+        <div id="header">
+            <input type="checkbox" class="toggle-all">
+            <label for="toggle-all">选择全部</label>
+            <input placeholder="做些什么?" class="new-todo"/>
+        </div>
+        <ul id="main"></ul>
+        <div id="footer"></div>
+    </div>
+
+</div>
+
+<script type="text/template" id="item-template">
+    <div class="view">
+        <input type="checkbox" class="toggle" checked=<%=completed%>>
+        <label for="toggle"><%-title%></label>
+        <button class="destroy"></button>
+    </div>
+    <input type="text" class="edit" value="<%-title%>"></script>
+
+<script type="text/template" id="stats-template">
+    <span class="todo-count"> <%=active%>items left</span>
+    <ul class="filters">
+        <li>
+            <a href="#/" class="selected">All</a>
+        </li>
+        <li>
+            <a href="#/active">Active</a>
+        </li>
+        <li>
+            <a href="#/complteted">Completed</a>
+        </li>
+    </ul>
+    <%if(completed){%>
+    <button class="clear-completed">Clear com</button>
+    <%}%>
+</script>
+
+
+<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+<script src="./bower_components/underscore/underscore-min.js"></script>
+<script src="./bower_components/backbone/backbone-min.js"></script>
+<script src="./bower_components/backbone.localStorage/backbone.localStorage-min.js"></script>
+<script src="js/models/todo.js"></script>
+<script src="js/collections/todos.js"></script>
+<script src="js/views/todo-view.js"></script>
+<script src="js/views/app-view.js"></script>
+<script src="js/routers/router.js"></script>
+</body>
+</html>

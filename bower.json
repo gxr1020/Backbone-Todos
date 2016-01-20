@@ -1,0 +1,24 @@
+{
+  "name": "Backbone-Todos",
+  "authors": [
+    "gxr1020"
+  ],
+  "description": "Backbone Todos",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.2.3",
+    "jquery": "~2.2.0",
+    "backbone.localStorage": "backbone.localstorage#~1.1.16",
+    "underscore": "~1.8.3"
+  }
+}
