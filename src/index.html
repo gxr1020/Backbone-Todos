@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<p class="m-tt">System</p>
+<div class="g-warp">
+
+    <div class="m-hd">
+        <div class="m-sch">
+            <div class="m-icon-warp"><i class="icon"></i></div>
+            <input type="text" class="putTxt" placeholder="做些什么?">
+        </div>
+    </div>
+    <div class="m-mn">
+        <ul class="m-list">
+        </ul>
+        <div class="m-operBar">
+            <button class="newItem">新 建</button>
+        </div>
+    </div>
+    <div class="m-ft">
+
+    </div>
+</div>
+
+
+<script type="text/tempalte" id="tpl-item">
+		<%=(name?name:"??姓名为空??")%>
+
+</script>
+
+<script type="text/tempalte" id="tpl-details">
+        <div class="m-operBar">
+            <a  class="editItem">编辑</a>
+        </div>
+        <div class="content">
+            <p>姓名:<%=name%></p>
+            <p>性别:<%=sex%></p>
+            <p>邮箱:<%=email%></p>
+        </div>
+
+
+</script>
+
+<script type="text/tempalte" id="tpl-edit">
+        <div class="m-operBar">
+            <a  class="saveItem">保存</a>
+            <a  class="deleItem">删除</a>
+        </div>
+        <div class="content">
+            <p>姓名: <input type="text" id="name" value="<%=name%>"/></p>
+            <p>性别: <select name="sex" id="sex" >
+					<option value="男" <%=(sex=="男"?"selected":"")%> >男</option>
+					<option value="女" <%=(sex=="女"?"selected":"")%> >女</option>
+				</select></p>
+            <p>邮箱: <input type="text" id="email" value="<%=email%>"/></p>
+        </div>
+
+
+</script>
+
+
+<script src='../bower_components/jquery/dist/jquery.min.js'></script>
+<script src='../bower_components/underscore/underscore-min.js'></script>
+<script src="../bower_components/backbone/backbone-min.js"></script>
+<script src="../bower_components/backbone.localstorage/backbone.localStorage-min.js"></script>
+<script src="js/models/person.js"></script>
+<script src="js/collections/persons.js"></script>
+<script src="js/views/personItemView.js"></script>
+<script src="js/views/personListView.js"></script>
+<script src="js/views/searchView.js"></script>
+<script src="js/views/showView.js"></script>
+<script src="js/views/editView.js"></script>
+<script src="js/views/groupView2.js"></script>
+
+<script src="js/views/appView.js"></script>
+
+<script src="js/routers/router.js"></script>
+</body>
+</html>

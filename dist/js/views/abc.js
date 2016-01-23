@@ -1,0 +1,1 @@
+console.log("a");var abcdabcdabcdabcdabcdabcd=function(){console.log("bb")};

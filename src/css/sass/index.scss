@@ -1,0 +1,200 @@
+//1定位属性优先
+//2自身属性
+//3文本修身
+
+//sass-mixin
+@mixin box-sizing($sizing) {
+  -webkit-box-sizing: $sizing;
+  -moz-box-sizing: $sizing;
+  -ms-box-sizing: $sizing;
+  box-sizing: $sizing;
+}
+
+@mixin gd() {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+//
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #AAD3FC;
+}
+
+.g-warp {
+  width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.m-tt {
+  margin: 20px 0;
+  font-size: 100px;
+  font-weight: 100;
+  font-family: "微软雅黑";
+  text-align: center;
+  text-shadow: 0 0 1px rgba(15, 92, 243, 0.4);
+  color: rgba(0, 0, 0, 0.05);
+}
+
+.m-hd {
+  border-bottom: 1px solid #ededed;
+  .m-sch {
+    overflow: auto;
+    .m-icon-warp {
+      float: left;
+      width: 12%;
+      height: 65px;
+      text-align: center;
+      .icon:before, .icon:after {
+        content: '';
+        height: 15px;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .icon {
+        display: block;
+        position: relative;
+        width: 15px;
+        margin: 16px auto;
+        font-style: normal;
+
+        &:before {
+          width: 15px;
+          border: 3px #A9A9A9 solid;
+          border-radius: 100%;
+          -webkit-border-radius: 100%;
+          -moz-border-radius: 100%
+        }
+        &:after {
+          width: 4px;
+          background: #A9A9A9;
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          top: 15px;
+          left: 20px;
+        }
+      }
+    }
+
+    .putTxt {
+      float: left;
+      width: 88%;
+      height: 65px;
+      padding: 16px;
+      @include box-sizing(border-box);
+      outline: none;
+      background-color: transparent;
+      border: 0;
+      font-size: 24px;
+      font-family: "微软雅黑";
+      color: #4d4d4d;
+
+    }
+  }
+
+}
+
+.m-mn {
+  .m-operBar {
+    height: 50px;
+    border-bottom: 1px solid #ededed;
+    line-height: 50px;
+    text-align: right;
+    .newItem {
+      margin-right: 8px;
+      padding: 4px 16px;
+      border: 1px solid #669BEC;
+      // border-radius:6px;
+      background-color: #fff;
+      color: #669BEC;
+      // background-color: #AAD3FC;
+      font-family: "微软雅黑";
+      font-size: 16px;
+      font-style: normal;
+      text-decoration: initial;
+
+      @include gd();
+      &:hover {
+        background-color: #669BEC;
+        color: #fff;
+        border-color: #fff;
+        // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+      }
+      &:active {
+        box-shadow: none;
+
+      }
+    }
+  }
+  .m-list {
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    max-height: 300px;
+    list-style: none;
+    li {
+      height: 50px;
+      line-height: 50px;
+      padding: 0 20px;
+      cursor: pointer;
+      color: #4d4d4d;
+      border-bottom: 1px solid #ededed;
+      font-family: "微软雅黑";
+      font-size: 16px;
+      text-decoration: inherit;
+    }
+    .selectLi {
+      background-color: #ededed;
+    }
+
+  }
+}
+
+.m-ft {
+  .m-operBar {
+    height: 50px;
+    border-bottom: 1px solid #ededed;
+    line-height: 50px;
+    text-align: right;
+    .editItem,.saveItem,.deleItem {
+      float:left;
+      height: 100%;
+      padding:0 36px;
+      border:0;
+      border-right: 1px solid #ededed;
+      //border: 1px solid #ededed;
+
+      // border-radius:6px;
+      background-color: #fff;
+      color: #4d4d4d;
+      cursor:pointer;
+      // background-color: #AAD3FC;
+      font-family: "微软雅黑";
+      font-size: 16px;
+      font-style: normal;
+      text-decoration: initial;
+    }
+  }
+  .content{
+    padding: 20px;
+    color: #4D4D52;
+    font-family: "微软雅黑";
+    select{
+      color: #4D4D52;
+    }
+
+  }
+}
+.f-dn{
+  display:none;
+}
